@@ -1,0 +1,36 @@
+@use '../variables' as *;
+
+.create-party {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+
+    .header {
+        padding: 35px 80px;
+        position: fixed;
+
+        .banner {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+
+            .title {
+                font-size: 21px;
+                font-weight: $font-semibold;
+            }
+        }
+    }
+
+    .create-content {
+        display: grid;
+        place-content: center;
+        flex: 1;
+
+        .create-form {
+            display: flex;
+            flex-direction: column;
+            gap: 31px;
+            align-items: center;
+        }
+    }
+}

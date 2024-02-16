@@ -1,0 +1,27 @@
+@use '../variables' as *;
+
+.button-atom {
+    font-weight: $font-semibold;
+    border-radius: 9999px;
+    width: fit-content;
+
+    &.primary {
+        padding: 12px 24px;
+        font-size: 16px;
+        background-color: $btn-bg-primary;
+        color: $btn-color-primary;
+    }
+
+    &.secondary {
+        padding: 16px;
+        font-size: 14px;
+        background-color: transparent;
+        color: $btn-color-primary;
+        border: 1px solid $btn-color-primary;
+    }
+
+    &:disabled {
+        pointer-events: none;
+        opacity: 0.5;
+    }
+}

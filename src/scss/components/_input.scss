@@ -1,0 +1,29 @@
+@use '../variables' as *;
+
+.input-atom {
+    display: flex;
+    flex-direction: column;
+    width: 292px;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: $font-bold;
+
+    .input {
+        padding: 10px 15px;
+        border: 1px solid $input-border;
+        border-radius: 9999px;
+        font-size: 14px;
+        font-weight: $font-regular;
+        color: $input-color;
+        background-color: transparent;
+
+        &::placeholder {
+            color: $placeholder-color;
+        }
+    }
+
+    .error {
+        font-size: 10px;
+        font-weight: $font-regular;
+    }
+}

@@ -1,0 +1,74 @@
+@use '../variables' as *;
+
+.join-party {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+
+    .header {
+        padding: 35px 80px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .title-party {
+            font-size: 26px;
+            font-weight: $font-bold;
+        }
+
+        .right-badge {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+
+            .initials-name {
+                width: 36px;
+                height: 36px;
+                background-color: $badge-bg;
+                color: $badge-color;
+                font-weight: $font-bold;
+                font-size: 14px;
+                display: grid;
+                place-content: center;
+                border-radius: 50%;
+                text-transform: uppercase;
+            }
+        }
+    }
+
+    .join-content {
+        display: grid;
+        place-content: center;
+        flex: 1;
+
+        .table-outline {
+            display: grid;
+            place-content: center;
+            width: 603px;
+            height: 345px;
+            border: 1px solid $border-first;
+            border-radius: 276px;
+            box-shadow: 0 0 2px 0 $color;
+
+            .table-middle {
+                display: grid;
+                place-content: center;
+                width: 555px;
+                height: 298px;
+                border: 1px solid $border-first;
+                border-radius: 276px;
+                box-shadow: 0 0 2px 0 $color;
+
+                .table-inner {
+                    width: 521px;
+                    height: 272px;
+                    background-color: $bg-soft;
+                    opacity: 0.6;
+                    border: 1px solid $border-first;
+                    border-radius: 276px;
+                    box-shadow: 0 0 2px 0 $color;
+                }
+            }
+        }
+    }
+}

@@ -30,27 +30,40 @@ export default function CreatePartyPage() {
         setName(e.target.value);
         setErrors(validateName(e.target.value));
     }
-    
+
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         if (errors.length > 0) {
             return;
         }
-        router.push(`join/?partyId=${name}`);
+        const API_URL = process.env.API_URL || 'http://localhost:3001'
+        fetch(`${API_URL}/party`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ name })
+        })
+            .then(response => response.json())
+            .then(data => {
+                router.push('/party/join?partyId=' + data.id);
+            }).catch(error => {
+                console.error('Error:', error);
+            })
     }
 
     return (
         <section className="create-party">
             <header className="header">
-                <div className="banner"> 
+                <div className="banner">
                     <PokerAtom />
                     <h1 className="title">Crear Partida</h1>
                 </div>
             </header>
             <main className="create-content">
                 <form action="" className="create-form" autoComplete="off" onSubmit={handleSubmit}>
-                    <InputAtom label="Nombra la partida" name="name" type="text" placeholder="Nombre de la partida" value={name} required onChange={handleChange} errors={errors}/>
-                    <ButtonAtom text="Crear partida" variant="primary" isDisabled={errors.length > 0 || name == ''}/>
+                    <InputAtom label="Nombra la partida" name="name" type="text" placeholder="Nombre de la partida" value={name} required onChange={handleChange} errors={errors} />
+                    <ButtonAtom text="Crear partida" variant="primary" isDisabled={errors.length > 0 || name == ''} />
                 </form>
             </main>
         </section>

@@ -1,5 +1,6 @@
 "use client"
-import { ButtonAtom, PokerAtom } from "@/design-system";
+import { ButtonAtom } from "@/design-system";
+import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import IO from "socket.io-client";
@@ -22,7 +23,7 @@ export default function JoinPartyPage() {
     return (
         <section className="join-party">
             <header className="header">
-                <PokerAtom />
+                <Image src="/images/poker.svg" alt="Pocker Pragma" width={60} height={60} className="poker spin" />
                 <h4 className="title-party">{partyName}</h4>
                 <div className="right-badge">
                     <span className="initials-name">JU</span>

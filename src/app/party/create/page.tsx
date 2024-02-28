@@ -1,5 +1,6 @@
 "use client"
-import { ButtonAtom, InputAtom, PokerAtom } from "@/design-system";
+import { ButtonAtom, InputAtom } from "@/design-system";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
@@ -56,7 +57,7 @@ export default function CreatePartyPage() {
         <section className="create-party">
             <header className="header">
                 <div className="banner">
-                    <PokerAtom />
+                    <Image src="/images/poker.svg" alt="Pocker Pragma" width={60} height={60} className="poker" />
                     <h1 className="title">Crear Partida</h1>
                 </div>
             </header>

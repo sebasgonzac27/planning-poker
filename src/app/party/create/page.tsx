@@ -1,25 +1,12 @@
 "use client"
 import { ButtonAtom, InputAtom } from "@/design-system";
+import { validateInput } from "@/utils";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 const validateName = (name: string) => {
-    // El nombre tiene entre 5 y 20 caracteres, no puede tener caracteres especiales (_,.*#/-), maximo puede tener 3 numeros el nombre, y no puede contener solo numeros
-    const errors: string[] = [];
-    if (name.length < 5) {
-        errors.push('El nombre de la partida debe tener al menos 5 caracteres.');
-    }
-    if (name.length > 20) {
-        errors.push('El nombre de la partida no debe tener más de 20 caracteres.');
-    }
-    if (name.match(/[_.*#/-]/)) {
-        errors.push('El nombre de la partida no puede contener caracteres especiales.');
-    }
-    if ((name.match(/\d/g) ?? []).length > 3) {
-        errors.push('El nombre de la partida no puede tener más de 3 números.');
-    }
-    return errors;
+    return validateInput(name);
 }
 
 export default function CreatePartyPage() {
@@ -62,7 +49,7 @@ export default function CreatePartyPage() {
                 </div>
             </header>
             <main className="create-content">
-                <form action="" className="create-form" autoComplete="off" onSubmit={handleSubmit}>
+                <form action="" className="create-form" onSubmit={handleSubmit}>
                     <InputAtom label="Nombra la partida" name="name" type="text" placeholder="Nombre de la partida" value={name} required onChange={handleChange} errors={errors} />
                     <ButtonAtom text="Crear partida" variant="primary" isDisabled={errors.length > 0 || name == ''} />
                 </form>

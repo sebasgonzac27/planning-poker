@@ -15,7 +15,7 @@ export default function InputAtom({ label, errors, name, type, placeholder, valu
     return (
         <label htmlFor={name} className="input-atom">
             {label}
-            <input className="input" type={type} name={name} placeholder={placeholder} value={value} required={required} onChange={onChange} />
+            <input className="input" type={type} name={name} placeholder={placeholder} value={value} required={required} onChange={onChange} autoComplete="off" />
             {errors && errors.map((error, _index) => <span className="error" key={_index}>{error}</span>)}
         </label>
     )

@@ -3,7 +3,7 @@
 .input-atom {
     display: flex;
     flex-direction: column;
-    width: 292px;
+    width: 100%;
     gap: 8px;
     font-size: 14px;
     font-weight: $font-bold;
@@ -16,6 +16,10 @@
         font-weight: $font-regular;
         color: $input-color;
         background-color: transparent;
+
+        &:focus {
+            background-color: $input-bg;
+        }
 
         &::placeholder {
             color: $placeholder-color;

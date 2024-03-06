@@ -5,7 +5,7 @@ interface Props extends ComponentProps<'span'> {
     initials: string
 }
 
-export default function AvatarAtom({ variant, initials, ...props }: Props) {
+export default function Avatar({ variant, initials, ...props }: Props) {
     return (
         <span className={`initials-name ${variant === 'lg' ? 'large' : ''}`} {...props}>{initials.toUpperCase()}</span>
     )

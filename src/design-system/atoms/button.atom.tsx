@@ -7,9 +7,9 @@ interface Props extends ComponentProps<"button"> {
 }
 
 
-export default function ButtonAtom({ text, variant, isDisabled = false }: Props) {
+export default function Button({ text, variant, isDisabled = false, ...props }: Props) {
     return (
-        <button className={`button-atom ${variant}`} disabled={isDisabled}>
+        <button className={`button-atom ${variant}`} disabled={isDisabled} {...props}>
             {text}
         </button>
     )

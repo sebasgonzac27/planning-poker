@@ -8,6 +8,10 @@
     .header {
         padding: 35px 80px;
 
+        @media screen and (max-width: 768px) {
+            padding: 30px;
+        }
+
         .banner {
             display: flex;
             align-items: center;
@@ -24,6 +28,10 @@
         display: grid;
         place-content: center;
         flex: 1;
+
+        @media screen and (max-width: 768px) {
+            padding: 30px;
+        }
 
         .create-form {
             display: flex;

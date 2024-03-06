@@ -3,23 +3,31 @@
 import { ReactElement, createContext, useState } from "react"
 import { io } from "socket.io-client";
 import { PartyContext as PartyContextType } from "../types";
+import { Player } from "@/types";
 
-const socket = io('http://localhost:3001', {
-    reconnection: false
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001'
+
+const socket = io(API_URL, {
+    reconnection: false,
 })
 
 export const PartyContext = createContext<PartyContextType | null>(null);
 
-export function ClassroomProvider({ children }: { children: ReactElement | JSX.Element }) {
-    const [isUserCreated, setIsUserCreated] = useState(false)
-
+export function PartyProvider({ children }: { children: ReactElement | JSX.Element }) {
+    const [partyName, setPartyName] = useState("")
+    const [players, setPlayers] = useState<Player[]>([])
+    const [userLoggedIn, setUserLoggedIn] = useState(false)
 
     return (
         <PartyContext.Provider value={
             {
                 socket,
-                isUserCreated,
-                setIsUserCreated
+                partyName,
+                setPartyName,
+                players,
+                setPlayers,
+                userLoggedIn,
+                setUserLoggedIn
             }
         }>
             {children}

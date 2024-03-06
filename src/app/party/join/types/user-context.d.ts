@@ -1,12 +1,12 @@
 import { Dispatch } from "react";
-import { PlayerRole } from ".";
+import { PlayerRole } from "@/types";
 import { SetState } from "@/types";
 
 export interface UserContext {
     username: string,
     setUsername: Dispatch<string>,
-    userRole: PlayerRole
-    setUserRole: SetState<PlayerRole>
+    role: PlayerRole
+    setRole: SetState<PlayerRole>
     isOwner: boolean,
     setIsOwner: SetState<boolean>
 }

@@ -1,5 +1,5 @@
 "use client"
-import { Button, Input } from "@/design-system";
+import { Button, Input } from "@/components";
 import Image from "next/image";
 import { useCreateForm } from "./hooks/useCreateForm";
 

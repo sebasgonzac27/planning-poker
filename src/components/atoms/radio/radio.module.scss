@@ -1,12 +1,12 @@
-@use '../variables/' as *;
+@use '@/styles/variables/' as *;
 
-.radio-atom {
+.label {
     display: flex;
     align-items: center;
     gap: 10px;
     font-size: 14px;
 
-    .input {
+    &__input {
         position: relative;
 
         &::before {

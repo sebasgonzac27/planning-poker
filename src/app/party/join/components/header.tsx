@@ -1,4 +1,4 @@
-import { Avatar, Button } from "@/design-system";
+import { Avatar, Button } from "@/components";
 import Image from "next/image";
 import { usePartyContext, useUserContext } from "../hooks";
 

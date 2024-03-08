@@ -1,3 +1,4 @@
+import styles from './button.module.scss'
 import { ComponentProps } from "react";
 
 interface Props extends ComponentProps<"button"> {
@@ -9,7 +10,7 @@ interface Props extends ComponentProps<"button"> {
 
 export default function Button({ text, variant, isDisabled = false, ...props }: Props) {
     return (
-        <button className={`button-atom ${variant}`} disabled={isDisabled} {...props}>
+        <button className={`${styles.button} ${styles[`button--${variant}`]}`} disabled={isDisabled} {...props}>
             {text}
         </button>
     )

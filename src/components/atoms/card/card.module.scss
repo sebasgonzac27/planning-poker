@@ -1,17 +1,16 @@
-@use '../variables' as *;
+@use '@/styles/variables' as *;
 
 .card {
     border: solid 1px $input-border;
     box-shadow: 0 0 2px 0 $input-border;
-    background-color: transparent;
     border-radius: 7px;
 
-    &.sm {
+    &--small {
         width: 35px;
         height: 60px;
     }
 
-    &.lg {
+    &--large {
         width: 53px;
         height: 86px;
     }

@@ -1,4 +1,4 @@
-import { Button, Input, Modal, RadioGroup, Radio } from "@/design-system"
+import { Button, Input, Modal, RadioGroup, Radio } from "@/components"
 import { usePartyContext, useUserContext } from "../hooks"
 import React, { useEffect, useState } from "react"
 import { Player, PlayerRole } from "@/types"

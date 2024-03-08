@@ -1,18 +1,21 @@
-@use '../variables/' as *;
+@use '@/styles/variables' as *;
 
-.initials-name {
-    width: 36px;
-    height: 36px;
+.initials {
     background-color: $badge-bg;
     color: $badge-color;
     font-weight: $font-bold;
-    font-size: 14px;
     display: grid;
     place-content: center;
     border-radius: 50%;
     text-transform: uppercase;
 
-    &.large {
+    &--small {
+        width: 36px;
+        height: 36px;
+        font-size: 14px;
+    }
+
+    &--large {
         width: 48px;
         height: 48px;
         font-size: 18px;

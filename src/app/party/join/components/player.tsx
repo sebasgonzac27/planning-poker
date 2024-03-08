@@ -1,4 +1,4 @@
-import { Avatar, Card } from "@/design-system";
+import { Avatar, Card } from "@/components";
 import { Player } from "@/types";
 
 const ROL = {

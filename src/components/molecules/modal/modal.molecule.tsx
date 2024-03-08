@@ -1,3 +1,4 @@
+import styles from './modal.module.scss'
 import { Children, ComponentProps, ReactElement, ReactNode, cloneElement } from "react"
 
 interface Props extends ComponentProps<'div'> {
@@ -6,8 +7,8 @@ interface Props extends ComponentProps<'div'> {
 
 export default function Modal({ children, contentClassName }: Props) {
     return (
-        <div className="modal">
-            <div className={`modal-content ${contentClassName}`}>
+        <div className={styles.modal}>
+            <div className={`${styles['modal__content']} ${contentClassName}`}>
                 {Children.map(children, (child) => cloneElement(child as ReactElement<ReactNode>))}
             </div>
         </div>
@@ -16,7 +17,7 @@ export default function Modal({ children, contentClassName }: Props) {
 
 function Header({ children, ...props }: ComponentProps<'div'>) {
     return (
-        <header className="header" {...props}>
+        <header className={styles['modal__header']} {...props}>
             {children}
         </header>
     )
@@ -24,7 +25,7 @@ function Header({ children, ...props }: ComponentProps<'div'>) {
 
 function Body({ children, ...props }: ComponentProps<'div'>) {
     return (
-        <div className="body" {...props}>
+        <div className={styles['modal__body']} {...props}>
             {children}
         </div>
     )

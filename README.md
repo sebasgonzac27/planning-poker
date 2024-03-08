@@ -1,36 +1,16 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Planning Poker - Pragma
 
-## Getting Started
+This code implements a planning poker game, which is a challenge proposed by Pragma as part of the company's enrollment process.
 
-First, run the development server:
+Planning poker is a collaborative estimation technique used in agile software development. It involves a group of people, typically the development team, coming together to estimate the effort required to complete a set of user stories or tasks.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+In this game, participants take turns to anonymously estimate the effort required for a particular task or user story. Each participant selects a card from a deck of cards, where each card represents a different estimate. The cards are then revealed simultaneously, and the estimates are discussed and compared. This process continues until a consensus is reached on the estimated effort.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This code provides the functionality to facilitate the planning poker game, including managing the deck of cards, collecting and revealing the estimates, and facilitating the discussion and consensus-building process.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Note: This code assumes that the participants and their estimates are already defined and provided as input. It does not handle the actual estimation process or user interaction.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+# To Do
+- Migrate pages styles to BEM and SCSS Modules.
+- Migrate styles of pages components to BEM and SCSS Modules.
+- Remake the distribution of players (12 max).

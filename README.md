@@ -12,6 +12,6 @@ This code provides the functionality to facilitate the planning poker game, incl
 > This code assumes that the participants and their estimates are already defined and provided as input. It does not handle the actual estimation process or user interaction.
 
 # To Do
-- Migrate pages styles to BEM and SCSS Modules.
-- Migrate styles of pages components to BEM and SCSS Modules.
-- Remake the distribution of players (12 max).
+- [ ] Migrate pages styles to BEM and SCSS Modules.
+- [ ] Migrate styles of pages components to BEM and SCSS Modules.
+- [ ] Remake the distribution of players (12 max).

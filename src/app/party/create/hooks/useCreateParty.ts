@@ -1,7 +1,6 @@
 
 import { useRouter } from "next/navigation";
-import { use, useState } from "react";
-import { usePartyContext } from "../../join/hooks";
+import { useState } from "react";
 
 const API_URL = process.env.API_URL || 'http://localhost:3001'
 

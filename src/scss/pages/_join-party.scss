@@ -5,29 +5,6 @@
     flex-direction: column;
     height: 100vh;
 
-    .header {
-        padding: 35px 80px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        position: relative;
-
-        .title-party {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 26px;
-            font-weight: $font-bold;
-        }
-
-        .right-badge {
-            display: flex;
-            align-items: center;
-            gap: 24px;
-        }
-    }
-
     .join-content {
         display: flex;
         flex-direction: column;
@@ -54,36 +31,6 @@
                 place-content: center;
                 width: 100px;
                 height: 100%;
-            }
-
-            .table-outline {
-                display: grid;
-                place-content: center;
-                width: 553px;
-                height: 295px;
-                border: 1px solid $border-first;
-                border-radius: 226px;
-                box-shadow: 0 0 2px 0 $color;
-
-                .table-middle {
-                    display: grid;
-                    place-content: center;
-                    width: 505px;
-                    height: 248px;
-                    border: 1px solid $border-first;
-                    border-radius: 226px;
-                    box-shadow: 0 0 2px 0 $color;
-
-                    .table-inner {
-                        width: 471px;
-                        height: 222px;
-                        background-color: $bg-soft;
-                        opacity: 0.6;
-                        border: 1px solid $border-first;
-                        border-radius: 226px;
-                        box-shadow: 0 0 2px 0 $color;
-                    }
-                }
             }
 
         }

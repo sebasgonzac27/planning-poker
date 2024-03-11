@@ -1,7 +1,7 @@
 "use client"
-import { Desk } from ".";
-import { usePartyContext } from "../hooks";
-import Player from './player';
+import { Desk } from "..";
+import { usePartyContext } from "../../hooks";
+import Player from '../player/player.component';
 
 export default function Playground() {
     const { players, socket } = usePartyContext()

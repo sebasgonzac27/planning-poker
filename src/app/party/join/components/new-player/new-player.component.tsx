@@ -1,5 +1,5 @@
 import { Button, Input, Modal, RadioGroup, Radio } from "@/components"
-import { usePartyContext, useUserContext } from "../hooks"
+import { usePartyContext, useUserContext } from "../../hooks"
 import React, { useEffect, useState } from "react"
 import { Player, PlayerRole } from "@/types"
 import { validateInput } from "@/utils"
@@ -29,6 +29,7 @@ export default function NewPlayer({ partyId }: { partyId: string }) {
             setRole(me.role)
             setIsOwner(me.isOwner)
         })
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {

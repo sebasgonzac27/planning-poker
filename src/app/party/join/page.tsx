@@ -1,9 +1,7 @@
 "use client"
 import { redirect, useSearchParams } from "next/navigation"
 import { PartyProvider, UserProvider } from "./contexts"
-import NewPlayer from "./components/new-player"
-import { Header } from "./components"
-import { Playground } from "./components"
+import { Header, NewPlayer, Playground } from "./components"
 
 export default function JoinPartyPage() {
     const searchParams = useSearchParams()

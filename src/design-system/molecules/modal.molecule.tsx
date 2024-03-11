@@ -1,21 +1,34 @@
-interface Props extends React.HTMLAttributes<HTMLDivElement> {
-    isOpen: boolean,
-    onClose: () => void,
-    children: React.ReactNode,
-    contentClassName: string
+import { Children, ComponentProps, ReactElement, ReactNode, cloneElement } from "react"
 
+interface Props extends ComponentProps<'div'> {
+    contentClassName: string
 }
 
-export default function ModalMolecule({ isOpen, onClose, children, contentClassName }: Props) {
-    if (!isOpen) {
-        return null;
-    }
-
+export default function Modal({ children, contentClassName }: Props) {
     return (
         <div className="modal">
             <div className={`modal-content ${contentClassName}`}>
-                {children}
+                {Children.map(children, (child) => cloneElement(child as ReactElement<ReactNode>))}
             </div>
         </div>
     )
 }
+
+function Header({ children, ...props }: ComponentProps<'div'>) {
+    return (
+        <header className="header" {...props}>
+            {children}
+        </header>
+    )
+}
+
+function Body({ children, ...props }: ComponentProps<'div'>) {
+    return (
+        <div className="body" {...props}>
+            {children}
+        </div>
+    )
+}
+
+Modal.Header = Header
+Modal.Body = Body

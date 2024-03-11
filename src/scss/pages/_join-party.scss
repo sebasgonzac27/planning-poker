@@ -29,37 +29,63 @@
     }
 
     .join-content {
-        display: grid;
-        place-content: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: auto;
+        gap: 40px;
 
-        .table-outline {
-            display: grid;
-            place-content: center;
-            width: 553px;
-            height: 295px;
-            border: 1px solid $border-first;
-            border-radius: 226px;
-            box-shadow: 0 0 2px 0 $color;
+        .top-players {
+            display: flex;
+            justify-content: center;
+            align-items: end;
+            gap: 80px;
+            height: 100px;
+            width: 100%;
+        }
 
-            .table-middle {
+        .middle-area {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+
+            .side-player {
                 display: grid;
                 place-content: center;
-                width: 505px;
-                height: 248px;
+                width: 100px;
+                height: 100%;
+            }
+
+            .table-outline {
+                display: grid;
+                place-content: center;
+                width: 553px;
+                height: 295px;
                 border: 1px solid $border-first;
                 border-radius: 226px;
                 box-shadow: 0 0 2px 0 $color;
 
-                .table-inner {
-                    width: 471px;
-                    height: 222px;
-                    background-color: $bg-soft;
-                    opacity: 0.6;
+                .table-middle {
+                    display: grid;
+                    place-content: center;
+                    width: 505px;
+                    height: 248px;
                     border: 1px solid $border-first;
                     border-radius: 226px;
                     box-shadow: 0 0 2px 0 $color;
+
+                    .table-inner {
+                        width: 471px;
+                        height: 222px;
+                        background-color: $bg-soft;
+                        opacity: 0.6;
+                        border: 1px solid $border-first;
+                        border-radius: 226px;
+                        box-shadow: 0 0 2px 0 $color;
+                    }
                 }
             }
+
         }
     }
 }
@@ -77,13 +103,5 @@
         justify-content: center;
         align-items: center;
         gap: 20px;
-
-        .radio-group {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 37px;
-        }
     }
-
 }

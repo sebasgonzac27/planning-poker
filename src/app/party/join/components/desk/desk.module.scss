@@ -1,0 +1,31 @@
+@use '@/styles/variables' as *;
+
+.table {
+    display: grid;
+    place-content: center;
+    width: 553px;
+    height: 295px;
+    border: 1px solid $border-first;
+    border-radius: 226px;
+    box-shadow: 0 0 2px 0 $color;
+
+    &__middle {
+        display: grid;
+        place-content: center;
+        width: 505px;
+        height: 248px;
+        border: 1px solid $border-first;
+        border-radius: 226px;
+        box-shadow: 0 0 2px 0 $color;
+    }
+
+    &__inner {
+        width: 471px;
+        height: 222px;
+        background-color: $bg-soft;
+        opacity: 0.6;
+        border: 1px solid $border-first;
+        border-radius: 226px;
+        box-shadow: 0 0 2px 0 $color;
+    }
+}

@@ -2,7 +2,7 @@
 import { redirect, useSearchParams } from "next/navigation"
 import { PartyProvider, UserProvider } from "./contexts"
 import NewPlayer from "./components/new-player"
-import Header from "./components/header"
+import { Header } from "./components"
 import { Playground } from "./components"
 
 export default function JoinPartyPage() {

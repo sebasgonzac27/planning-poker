@@ -14,7 +14,7 @@ export default function Player({ player }: { player: Player }) {
                 </Card>
             )}
             {player.role === ROL.VIEWER && (
-                <Avatar variant="lg" initials={player.username.slice(0, 2)} />
+                <Avatar variant="large" initials={player.username.slice(0, 2)} />
             )}
             <span>{player.username}</span>
         </div>

@@ -7,8 +7,8 @@ export default function usePlayerForm(partyId: string) {
     const { socket, setUserLoggedIn, userLoggedIn } = usePartyContext();
     const { setUsername, setRole: setRoleContext } = useUserContext();
 
-    const [name, setName] = useState("");
-    const [role, setRole] = useState<PlayerRole | null>(null);
+    const [name, setName] = useState<string>("");
+    const [role, setRole] = useState<PlayerRole>('player');
     const [errors, setErrors] = useState<string[]>([]);
 
     const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {

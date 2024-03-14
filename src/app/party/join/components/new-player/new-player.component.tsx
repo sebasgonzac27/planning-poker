@@ -3,7 +3,7 @@ import { Button, Input, Modal, RadioGroup, Radio } from "@/components"
 import usePlayerForm from "../../hooks/usePlayerForm"
 
 export default function NewPlayer({ partyId }: { partyId: string }) {
-    const { name, role, errors, userLoggedIn, handleNameChange, handleRoleChange, handleSubmit } = usePlayerForm(partyId)
+    const { name, errors, userLoggedIn, handleNameChange, handleRoleChange, handleSubmit } = usePlayerForm(partyId)
     return (
         <>
             {!userLoggedIn && (

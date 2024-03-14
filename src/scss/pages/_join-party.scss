@@ -1,54 +1,34 @@
 @use '../variables' as *;
 
-.join-party {
+
+
+.join-content {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    align-items: center;
+    margin: auto;
+    gap: 40px;
 
-    .join-content {
+    .top-players {
         display: flex;
-        flex-direction: column;
+        justify-content: center;
+        align-items: end;
+        gap: 80px;
+        height: 100px;
+        width: 100%;
+    }
+
+    .middle-area {
+        display: flex;
         align-items: center;
-        margin: auto;
         gap: 40px;
 
-        .top-players {
-            display: flex;
-            justify-content: center;
-            align-items: end;
-            gap: 80px;
-            height: 100px;
-            width: 100%;
+        .side-player {
+            display: grid;
+            place-content: center;
+            width: 100px;
+            height: 100%;
         }
 
-        .middle-area {
-            display: flex;
-            align-items: center;
-            gap: 40px;
-
-            .side-player {
-                display: grid;
-                place-content: center;
-                width: 100px;
-                height: 100%;
-            }
-
-        }
-    }
-}
-
-.modal-name {
-    width: 514px;
-    height: 294px;
-    display: grid;
-    place-content: center;
-
-    .form-name {
-        width: 292px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 20px;
     }
 }

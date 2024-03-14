@@ -1,9 +1,9 @@
 @use '@/styles/variables' as *;
 
 .card {
-    border: solid 1px $input-border;
-    box-shadow: 0 0 2px 0 $input-border;
+    border: solid 1px $card-border;
     border-radius: 7px;
+    background-color: transparent;
 
     &--small {
         width: 35px;

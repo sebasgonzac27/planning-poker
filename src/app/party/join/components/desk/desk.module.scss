@@ -32,17 +32,17 @@
 
 @media screen and (width < 768px) {
     .table {
-        width: 295px;
-        height: 553px;
+        width: 200px;
+        height: 350px;
 
         &__middle {
-            width: 248px;
-            height: 505px;
+            width: 170px;
+            height: 320px;
         }
 
         &__inner {
-            width: 222px;
-            height: 471px;
+            width: 140px;
+            height: 290px;
         }
     }
 }

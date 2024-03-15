@@ -2,12 +2,10 @@
 
 .card {
     border: solid 1px $card-border;
-    border-radius: 7px;
     background-color: transparent;
 
     &--small {
-        width: 35px;
-        height: 60px;
+        aspect-ratio: 9/16;
     }
 
     &--large {

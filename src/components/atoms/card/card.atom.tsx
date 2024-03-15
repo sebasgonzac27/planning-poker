@@ -6,9 +6,9 @@ interface Props extends ComponentProps<'button'> {
     variant?: 'small' | 'large';
 }
 
-export default function Card({ children, variant = 'small', ...props }: Props) {
+export default function Card({ children, variant = 'small', className, ...props }: Props) {
     return (
-        <button className={`${styles.card} ${styles[`card--${variant}`]}`}{...props}>
+        <button className={`${styles.card} ${styles[`card--${variant}`]} ${className}`}{...props}>
             {children}
         </button>
     )

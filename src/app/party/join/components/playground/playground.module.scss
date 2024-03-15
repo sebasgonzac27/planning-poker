@@ -2,30 +2,50 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     margin: auto;
     gap: 40px;
-    flex: 1;
 
     &__top-players {
         display: flex;
         justify-content: center;
         align-items: end;
-        gap: 80px;
         height: 100px;
-        width: 100%;
+        gap: 80px;
     }
 
     &__middle-area {
         display: flex;
         align-items: center;
+        justify-content: center;
         gap: 40px;
     }
 
     &__side-players {
         display: grid;
         place-content: center;
+        width: 80px;
         gap: 80px;
-        width: 100px;
-        height: 100%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .content {
+        gap: 20px;
+        margin: 0;
+
+        &__top-players {
+            height: 70px;
+            gap: 40px;
+        }
+
+        &__middle-area {
+            gap: 10px;
+        }
+
+        &__side-players {
+            width: 60px;
+            gap: 40px;
+        }
     }
 }

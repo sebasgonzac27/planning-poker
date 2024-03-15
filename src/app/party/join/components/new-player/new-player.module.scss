@@ -1,0 +1,15 @@
+.modal {
+    width: 514px;
+    height: 294px;
+    display: grid;
+    place-content: center;
+
+    &__form {
+        width: 292px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+}

@@ -1,0 +1,30 @@
+.player {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+
+    &__card {
+        width: 35px;
+        border-radius: 6px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .player {
+
+        &__card {
+            width: 25px;
+            border-radius: 4px;
+        }
+
+        &__name {
+            font-size: 0.8rem;
+            width: 50px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+}

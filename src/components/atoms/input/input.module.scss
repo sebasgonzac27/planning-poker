@@ -1,0 +1,33 @@
+@use '@/styles/variables' as *;
+
+.label {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: $font-bold;
+
+    &__input {
+        padding: 10px 15px;
+        border: 1px solid $input-border;
+        border-radius: 100px;
+        font-size: 14px;
+        font-weight: $font-regular;
+        color: $input-color;
+        background-color: transparent;
+
+        &:focus {
+            background-color: $input-bg;
+        }
+
+        &::placeholder {
+            color: $placeholder-color;
+        }
+    }
+
+    &__error {
+        font-size: 10px;
+        font-weight: $font-regular;
+    }
+}

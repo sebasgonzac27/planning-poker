@@ -9,11 +9,14 @@ export default function Header() {
 
     return (
         <header className={styles.header}>
-            <Image priority src="/images/poker.svg" alt="Pocker Pragma" width={60} height={60} />
+            <Image className={styles['header__logo']} priority src="/images/poker.svg" alt="Pocker Pragma" width={60} height={60} />
             <h4 className={styles['header__title']}>{partyName}</h4>
+
             <div className={styles['header__badge']}>
                 <Avatar variant="small" initials={username.slice(0, 2) || ''} />
-                <Button text="Invitar jugadores" variant="secondary" />
+                <div className={styles['header__button']}>
+                    <Button text="Invitar jugadores" variant="secondary" />
+                </div>
             </div>
         </header>
     )

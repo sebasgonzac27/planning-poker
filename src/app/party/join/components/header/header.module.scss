@@ -22,3 +22,25 @@
         gap: 24px;
     }
 }
+
+@media screen and (max-width: 768px) {
+    .header {
+        padding: 10px 15px;
+
+        &__logo {
+            width: 45px;
+            height: 45px;
+        }
+
+        &__title {
+            position: inherit;
+            transform: none;
+            left: 0;
+            font-size: 1.2rem;
+        }
+
+        &__button {
+            display: none;
+        }
+    }
+}

@@ -1,5 +1,5 @@
 import styles from './player.module.scss';
-import { Avatar, Card } from '@/components';
+import { Avatar, Card } from '@/design-system';
 
 import { Player } from "@/types";
 

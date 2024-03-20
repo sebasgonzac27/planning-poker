@@ -1,6 +1,6 @@
 "use client"
 import styles from './page.module.scss';
-import { Button, Input } from "@/components";
+import { Button, Input } from "@/design-system";
 import Image from "next/image";
 import { useCreateForm } from "./hooks/useCreateForm";
 

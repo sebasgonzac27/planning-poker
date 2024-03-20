@@ -1,5 +1,5 @@
 import styles from './new-player.module.scss';
-import { Button, Input, Modal, RadioGroup, Radio } from "@/components"
+import { Button, Input, Modal, RadioGroup, Radio } from "@/design-system"
 import usePlayerForm from "../../hooks/usePlayerForm"
 
 export default function NewPlayer({ partyId }: { partyId: string }) {

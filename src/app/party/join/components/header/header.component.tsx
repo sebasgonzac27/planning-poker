@@ -1,5 +1,5 @@
 import styles from './header.module.scss';
-import { Avatar, Button } from "@/components";
+import { Avatar, Button } from "@/design-system";
 import Image from "next/image";
 import { usePartyContext, useUserContext } from "../../hooks";
 

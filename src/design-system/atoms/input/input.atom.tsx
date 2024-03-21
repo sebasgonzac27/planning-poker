@@ -9,10 +9,14 @@ interface Props extends ComponentProps<"input"> {
 
 export default function Input({ label, errors, name, ...props }: Props) {
     return (
-        <label className={styles.label}>
-            {label}
-            <input className={styles['label__input']} name={name} autoComplete="off" {...props} />
-            {errors && errors.map((error, _index) => <span className={styles['label__error']} key={_index}>{error}</span>)}
-        </label>
+        <div className={styles['input-container']}>
+            <label htmlFor={name} className={styles['input-container__label']}>
+                {label}
+            </label>
+            <input className={styles['input-container__input']} name={name} id={name} autoComplete="off" {...props} />
+            <div className={styles['input-container__error-container']}>
+                {errors && errors.map((error, _index) => <span className={styles['input-container__error']} key={_index}>{error}</span>)}
+            </div>
+        </div>
     )
 }

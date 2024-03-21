@@ -1,10 +1,13 @@
 @use '@/styles/variables/' as *;
 
-.label {
+.radio-container {
     display: flex;
     align-items: center;
     gap: 10px;
-    font-size: 14px;
+
+    &__label {
+        font-size: .9rem;
+    }
 
     &__input {
         position: relative;

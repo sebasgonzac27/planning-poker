@@ -8,6 +8,6 @@ interface Props extends ComponentProps<'span'> {
 
 export default function Avatar({ variant, initials, ...props }: Props) {
     return (
-        <span className={`${styles.initials} ${styles[`initials--${variant}`]}`} {...props}>{initials.toUpperCase()}</span>
+        <span className={`${styles.avatar} ${styles[`avatar--${variant}`]}`} {...props}>{initials.toUpperCase()}</span>
     )
 }

@@ -13,7 +13,7 @@ const socket = io(API_URL, {
 
 export const PartyContext = createContext<PartyContextType | null>(null);
 
-export function PartyProvider({ children }: { children: ReactElement | JSX.Element }) {
+export function PartyProvider({ children }: { children: ReactElement }) {
     const [partyName, setPartyName] = useState("")
     const [players, setPlayers] = useState<Player[]>([])
     const [userLoggedIn, setUserLoggedIn] = useState(false)

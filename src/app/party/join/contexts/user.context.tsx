@@ -4,7 +4,7 @@ import { PlayerRole } from "@/types";
 
 export const UserContext = createContext<UserContextType | null>(null)
 
-export function UserProvider({ children }: { children: JSX.Element | ReactElement }) {
+export function UserProvider({ children }: { children: ReactElement }) {
     const [username, setUsername] = useState('')
     const [role, setRole] = useState<PlayerRole>('player')
     const [isOwner, setIsOwner] = useState(false)

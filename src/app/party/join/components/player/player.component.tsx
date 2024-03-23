@@ -1,14 +1,14 @@
 import styles from './player.module.scss';
 import { Avatar, Card } from '@/design-system';
 
-import { Player } from "@/types";
+import { Player as PlayerT } from "@/types";
 
 const ROL = {
     player: 'player',
     viewer: 'viewer',
 }
 
-export default function Player({ player }: { player: Player }) {
+export default function Player({ player }: { player: PlayerT }) {
     return (
         <div className={styles.player}>
             {player.role === ROL.player && (

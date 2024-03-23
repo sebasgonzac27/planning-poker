@@ -1,9 +1,9 @@
 import styles from './card.module.scss'
-import { ComponentProps } from "react";
+import { ComponentProps, ReactNode } from "react";
 
 interface Props extends ComponentProps<'button'> {
-    children?: React.ReactNode;
-    variant?: 'small' | 'large';
+    children?: ReactNode,
+    variant?: 'small' | 'large',
 }
 
 export default function Card({ children, variant = 'small', className, ...props }: Props) {

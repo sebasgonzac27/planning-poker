@@ -1,15 +1,15 @@
-import styles from './new-player.module.scss';
-import { Button, Input, Modal, RadioGroup, Radio } from "@/design-system"
-import usePlayerForm from "../../hooks/usePlayerForm"
+import styles from './new-player.module.scss'
+import { Button, Input, Modal, RadioGroup, Radio } from '@/design-system'
+import usePlayerForm from '../../hooks/usePlayerForm'
 
-export default function NewPlayer({ partyId }: { partyId: string }) {
-    const { name, errors, userLoggedIn, handleNameChange, handleRoleChange, handleSubmit } = usePlayerForm(partyId)
-    return (
+export default function NewPlayer ({ partyId }: { partyId: string }) {
+  const { name, errors, userLoggedIn, handleNameChange, handleRoleChange, handleSubmit } = usePlayerForm(partyId)
+  return (
         <>
             {!userLoggedIn && (
                 <Modal contentClassName={styles.modal}>
                     <Modal.Body>
-                        <form className={styles['modal__form']} onSubmit={handleSubmit}>
+                        <form className={styles.modal__form} onSubmit={handleSubmit}>
                             <Input
                                 label="Tu nombre"
                                 type="text"
@@ -28,5 +28,5 @@ export default function NewPlayer({ partyId }: { partyId: string }) {
                 </Modal>
             )}
         </>
-    )
+  )
 }

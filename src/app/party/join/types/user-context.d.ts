@@ -1,5 +1,6 @@
 import { Dispatch } from 'react'
-import { PlayerRole, SetState } from '@/types'
+import { PlayerRole } from '@/types'
+import { SetState } from '@/core'
 
 export interface UserContext {
     username: string,

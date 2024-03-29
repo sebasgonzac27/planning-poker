@@ -1,4 +1,4 @@
-import { Player, SetState } from '@/types'
+import { Player, SetState } from '@/core'
 import { Socket } from 'socket.io-client'
 
 export interface PartyContext {

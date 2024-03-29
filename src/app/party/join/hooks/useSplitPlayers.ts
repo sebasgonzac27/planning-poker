@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { usePartyContext } from '.'
-import { Player } from '@/types'
+import { Player } from '@/core'
 
 export function useSplitPlayers () {
   const { socket, players, setPlayers } = usePartyContext()

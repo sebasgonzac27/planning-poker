@@ -1,4 +1,4 @@
-import { PlayerRole } from '.'
+import { PlayerRole } from '../types/player-role'
 
 export interface Player {
     socketId: string

@@ -5,15 +5,16 @@ interface Props extends ComponentProps<'input'> {
     label: string,
     name: string,
     value: string,
+    id: string
 }
 
-export default function Radio ({ label, value, name, ...props }: Props) {
+export default function Radio ({ label, value, name, id, ...props }: Props) {
   return (
         <div className={styles['radio-container']}>
-            <label className={styles['radio-container__label']} htmlFor={name}>
+            <label className={styles['radio-container__label']} htmlFor={id}>
                 {label}
             </label>
-            <input className={styles['radio-container__input']} type="radio" value={value} name={name} id={name} {...props} />
+            <input className={styles['radio-container__input']} type="radio" value={value} name={name} id={id} {...props} />
         </div>
   )
 }

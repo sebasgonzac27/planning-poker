@@ -3,13 +3,37 @@
 .card {
     border: solid 1px $card-border;
     background-color: transparent;
+    color: $color;
+    font-weight: bold;
 
     &--small {
-        aspect-ratio: 9/16;
+        min-width: 35px;
+        min-height: 55px;
+        border-radius: 6px;
     }
 
     &--large {
-        width: 53px;
-        height: 86px;
+        min-width: 55px;
+        min-height: 80px;
+        border-radius: 8px;
+    }
+
+    &--filled {
+        background-color: $card-bg;
+        color: $card-color-dark;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .card {
+        &--small {
+            min-width: 25px;
+            min-height: 45px;
+        }
+
+        &--large {
+            min-width: 45px;
+            min-height: 70px;
+        }
     }
 }

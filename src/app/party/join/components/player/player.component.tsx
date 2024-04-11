@@ -1,6 +1,5 @@
 import styles from './player.module.scss'
 import { Avatar, Card } from '@/design-system'
-
 import { Player as PlayerT, PlayerRole } from '@/core'
 
 export default function Player ({ player }: { player: PlayerT }) {

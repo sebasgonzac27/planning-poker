@@ -19,8 +19,8 @@ export default function NewPlayer ({ partyId }: { partyId: string }) {
                                 errors={errors}
                             />
                             <RadioGroup>
-                                <Radio label='Jugador' name="role-player" value={'player'} defaultChecked onChange={handleRoleChange} />
-                                <Radio label='Espectador' name="role-player" value={'viewer'} onChange={handleRoleChange} />
+                                <Radio label='Jugador' name="role-player" id="radio-player" value={'player'} defaultChecked onChange={handleRoleChange} />
+                                <Radio label='Espectador' name="role-player" id="radio-viewer" value={'viewer'} onChange={handleRoleChange} />
                             </RadioGroup>
                             <Button text="Continuar" variant="primary" disabled={errors.length > 0 || !name} />
                         </form>

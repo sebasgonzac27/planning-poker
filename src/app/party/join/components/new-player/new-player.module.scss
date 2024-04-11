@@ -1,15 +1,22 @@
 .modal {
-    width: 514px;
-    height: 294px;
+    width: 30rem;
+    height: 20rem;
     display: grid;
     place-content: center;
 
     &__form {
-        width: 292px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         gap: 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .modal {
+        width: 20rem;
+        height: 15rem;
+        padding: 10rem;
     }
 }

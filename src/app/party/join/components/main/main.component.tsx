@@ -1,8 +1,8 @@
 import styles from './main.module.scss'
-import { Header, NewPlayer, Playground } from '..'
+import { Header, NewPlayer, Playground, Cards } from '..'
 import { useEffect } from 'react'
 import { usePartyContext, useUserContext } from '../../hooks'
-import { Player } from '@/types'
+import { Player } from '@/core'
 
 interface Props {
     partyId: string;
@@ -29,6 +29,7 @@ export default function Main ({ partyId }: Props) {
             <NewPlayer partyId={partyId} />
             <Header />
             <Playground />
+            <Cards/>
         </main>
   )
 }

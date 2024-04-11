@@ -1,6 +1,6 @@
-import { Dispatch } from "react";
-import { PlayerRole } from "@/types";
-import { SetState } from "@/types";
+import { Dispatch } from 'react'
+import { PlayerRole } from '@/types'
+import { SetState } from '@/core'
 
 export interface UserContext {
     username: string,

@@ -1,2 +1,1 @@
-export { validateInput } from './validateInput';
-export * from './index'
+export { validateInput } from './validateInput'

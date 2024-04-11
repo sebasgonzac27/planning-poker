@@ -1,6 +1,5 @@
-import { Player, SetState } from "@/types";
-import { Dispatch } from "react";
-import { Socket } from "socket.io-client";
+import { Player, SetState } from '@/core'
+import { Socket } from 'socket.io-client'
 
 export interface PartyContext {
     socket: Socket,

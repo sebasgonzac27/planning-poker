@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-export enum PlayerRole {
+export const enum PlayerRole {
   Player = 'player',
   Viewer = 'viewer'
 }

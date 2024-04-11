@@ -1,6 +1,8 @@
-export function validateInput (text: string) {
+export function validateInput (input: string) {
   // El texto tiene entre 5 y 20 caracteres, no puede tener caracteres especiales (_,.*#/-), maximo puede tener 3 numeros el nombre, y no puede contener solo numeros
   const errors: string[] = []
+
+  const text = input.trim()
 
   if (text.length < 5) {
     errors.push('Este campo debe tener al menos 5 caracteres.')

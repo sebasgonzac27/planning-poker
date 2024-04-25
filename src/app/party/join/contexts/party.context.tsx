@@ -15,6 +15,7 @@ export function PartyProvider ({ children }: { children: ReactElement }) {
   const [partyName, setPartyName] = useState('')
   const [players, setPlayers] = useState<Player[]>([])
   const [userLoggedIn, setUserLoggedIn] = useState(false)
+  const [revealed, setRevealed] = useState(false)
 
   return (
         <PartyContext.Provider value={
@@ -25,7 +26,9 @@ export function PartyProvider ({ children }: { children: ReactElement }) {
               players,
               setPlayers,
               userLoggedIn,
-              setUserLoggedIn
+              setUserLoggedIn,
+              revealed,
+              setRevealed
             }
         }>
             {children}

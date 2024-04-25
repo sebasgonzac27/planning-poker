@@ -8,5 +8,7 @@ export interface PartyContext {
     players: Player[]
     setPlayers: SetState<Player[]>,
     userLoggedIn: boolean,
-    setUserLoggedIn: SetState<boolean>
+    setUserLoggedIn: SetState<boolean>,
+    revealed: boolean,
+    setRevealed: SetState<boolean>
 }

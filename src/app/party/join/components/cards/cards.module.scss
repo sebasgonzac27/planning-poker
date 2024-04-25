@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 
   &__title {
     font-size: 1.2rem;
@@ -39,6 +39,10 @@
       width: 100vw;
       padding-inline: 20px;
       overflow-y: auto;
+    }
+
+    &__card:hover {
+      transform: translateY(0);
     }
   }
 }

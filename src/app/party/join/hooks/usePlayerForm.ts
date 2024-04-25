@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { PlayerRole } from '@/types'
+import { PlayerRole } from '@/core'
 import { usePartyContext, useUserContext } from '.'
 import { validateInput } from '@/utils'
 
@@ -8,7 +8,7 @@ export default function usePlayerForm (partyId: string) {
   const { setUsername, setRole: setRoleContext } = useUserContext()
 
   const [name, setName] = useState<string>('')
-  const [role, setRole] = useState<PlayerRole>('player')
+  const [role, setRole] = useState<PlayerRole>(PlayerRole.Player)
   const [errors, setErrors] = useState<string[]>([])
 
   const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {

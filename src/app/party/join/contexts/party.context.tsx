@@ -1,9 +1,7 @@
-'use client'
-
 import { ReactElement, createContext, useState } from 'react'
 import { io } from 'socket.io-client'
 import { PartyContext as PartyContextType } from '../types'
-import { Player } from '@/types'
+import { Player } from '@/core'
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001'
 

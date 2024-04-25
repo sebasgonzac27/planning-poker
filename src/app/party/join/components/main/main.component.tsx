@@ -1,3 +1,4 @@
+'use client'
 import styles from './main.module.scss'
 import { Header, NewPlayer, Playground, Cards } from '..'
 import { useEffect } from 'react'
@@ -13,13 +14,23 @@ export default function Main ({ partyId }: Props) {
   const { setUsername, setRole, setIsOwner } = useUserContext()
 
   useEffect(() => {
+    const updatePlayers = (players: Player[]) => {
+      setPlayers(players)
+      const me = players.find((p: Player) => p.socketId === socket.id)
+      if (me) {
+        setUsername(me.username)
+        setRole(me.role)
+        setIsOwner(me.isOwner)
+      }
+    }
+
     socket.on('join-party', ({ party, players }) => {
       setPartyName(party.name)
-      const me = players.find((p: Player) => p.socketId === socket.id)
-      setPlayers(players)
-      setUsername(me.username)
-      setRole(me.role)
-      setIsOwner(me.isOwner)
+      updatePlayers(players)
+    })
+
+    socket.on('update-players', ({ players }) => {
+      updatePlayers(players)
     })
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
@@ -29,7 +40,7 @@ export default function Main ({ partyId }: Props) {
             <NewPlayer partyId={partyId} />
             <Header />
             <Playground />
-            <Cards/>
+            <Cards partyId={partyId}/>
         </main>
   )
 }

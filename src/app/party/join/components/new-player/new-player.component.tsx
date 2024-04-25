@@ -1,6 +1,7 @@
 import styles from './new-player.module.scss'
 import { Button, Input, Modal, RadioGroup, Radio } from '@/design-system'
 import usePlayerForm from '../../hooks/usePlayerForm'
+import { PlayerRole } from '@/core'
 
 export default function NewPlayer ({ partyId }: { partyId: string }) {
   const { name, errors, userLoggedIn, handleNameChange, handleRoleChange, handleSubmit } = usePlayerForm(partyId)
@@ -19,8 +20,8 @@ export default function NewPlayer ({ partyId }: { partyId: string }) {
                                 errors={errors}
                             />
                             <RadioGroup>
-                                <Radio label='Jugador' name="role-player" id="radio-player" value={'player'} defaultChecked onChange={handleRoleChange} />
-                                <Radio label='Espectador' name="role-player" id="radio-viewer" value={'viewer'} onChange={handleRoleChange} />
+                                <Radio label='Jugador' name="role-player" id="radio-player" value={PlayerRole.Player} defaultChecked onChange={handleRoleChange} />
+                                <Radio label='Espectador' name="role-player" id="radio-viewer" value={PlayerRole.Viewer} onChange={handleRoleChange} />
                             </RadioGroup>
                             <Button text="Continuar" variant="primary" disabled={errors.length > 0 || !name} />
                         </form>

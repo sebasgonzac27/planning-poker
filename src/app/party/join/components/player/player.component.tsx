@@ -6,7 +6,7 @@ export default function Player ({ player }: { player: PlayerT }) {
   return (
         <div className={styles.player}>
             {player.role === PlayerRole.Player && (
-                <Card className={styles.player__card} variant='small' />
+                <Card className={styles.player__card} variant='small' fill={player.vote != null}/>
             )}
             {player.role === PlayerRole.Viewer && (
                 <Avatar variant="large" initials={player.username.slice(0, 2)} />

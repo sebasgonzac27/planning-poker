@@ -1,6 +1,6 @@
 'use client'
 import styles from './main.module.scss'
-import { Header, NewPlayer, Playground, Cards } from '..'
+import { Header, NewPlayer, Playground, Cards, Stats } from '..'
 import { useEffect } from 'react'
 import { usePartyContext, useUserContext } from '../../hooks'
 import { Player } from '@/core'
@@ -10,10 +10,12 @@ interface Props {
 }
 
 export default function Main ({ partyId }: Props) {
-  const { socket, setPartyName, setPlayers } = usePartyContext()
+  const { socket, setPartyName, setPlayers, setPartyId, setAverage, setTotalCount } = usePartyContext()
   const { setUsername, setRole, setIsOwner } = useUserContext()
 
   useEffect(() => {
+    setPartyId(partyId)
+
     const updatePlayers = (players: Player[]) => {
       setPlayers(players)
       const me = players.find((p: Player) => p.socketId === socket.id)
@@ -32,15 +34,22 @@ export default function Main ({ partyId }: Props) {
     socket.on('update-players', ({ players }) => {
       updatePlayers(players)
     })
+
+    socket.on('reveal-cards', ({ average, votesCount }) => {
+      console.log('Entro a reveal-cards')
+      setAverage(average)
+      setTotalCount(votesCount)
+    })
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (
         <main className={styles.join}>
-            <NewPlayer partyId={partyId} />
+            <NewPlayer />
             <Header />
             <Playground />
-            <Cards partyId={partyId}/>
+            <Cards />
+            <Stats/>
         </main>
   )
 }

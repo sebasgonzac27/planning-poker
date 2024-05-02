@@ -3,7 +3,7 @@ import { ComponentProps } from 'react'
 
 interface Props extends ComponentProps<'button'> {
     text: string;
-    variant: 'primary' | 'secondary';
+    variant: 'primary' | 'secondary' | 'tertiary';
     isDisabled?: boolean;
 }
 

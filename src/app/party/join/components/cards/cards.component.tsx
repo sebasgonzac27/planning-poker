@@ -6,9 +6,9 @@ import { PlayerRole } from '@/core'
 const POINTS = ['1', '2', '3', '5', '8', '13', '21', '34', '55', '89', '?', '☕️']
 const API_URL = process.env.API_URL || 'http://localhost:3001'
 
-export default function Cards ({ partyId }: { partyId: string }) {
+export default function Cards () {
   const { role, vote, setVote } = useUserContext()
-  const { userLoggedIn, socket } = usePartyContext()
+  const { userLoggedIn, revealed, socket, partyId } = usePartyContext()
 
   const handleCardClick = (point: string) => {
     let votePoint: string | null
@@ -37,7 +37,7 @@ export default function Cards ({ partyId }: { partyId: string }) {
 
   return (
     <>
-      {userLoggedIn && role === PlayerRole.Player && (
+      {userLoggedIn && !revealed && role === PlayerRole.Player && (
         <div className={styles.cards}>
           <h3 className={styles.cards__title}>Elige una carta 👇</h3>
           <div className={styles.cards__container}>

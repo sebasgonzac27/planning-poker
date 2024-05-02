@@ -12,15 +12,20 @@ const socket = io(API_URL, {
 export const PartyContext = createContext<PartyContextType | null>(null)
 
 export function PartyProvider ({ children }: { children: ReactElement }) {
+  const [partyId, setPartyId] = useState<string>('')
   const [partyName, setPartyName] = useState('')
   const [players, setPlayers] = useState<Player[]>([])
   const [userLoggedIn, setUserLoggedIn] = useState(false)
   const [revealed, setRevealed] = useState(false)
+  const [average, setAverage] = useState(0)
+  const [totalCount, setTotalCount] = useState({})
 
   return (
         <PartyContext.Provider value={
             {
               socket,
+              partyId,
+              setPartyId,
               partyName,
               setPartyName,
               players,
@@ -28,7 +33,11 @@ export function PartyProvider ({ children }: { children: ReactElement }) {
               userLoggedIn,
               setUserLoggedIn,
               revealed,
-              setRevealed
+              setRevealed,
+              average,
+              setAverage,
+              totalCount,
+              setTotalCount
             }
         }>
             {children}

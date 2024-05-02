@@ -2,8 +2,10 @@ import styles from './new-player.module.scss'
 import { Button, Input, Modal, RadioGroup, Radio } from '@/design-system'
 import usePlayerForm from '../../hooks/usePlayerForm'
 import { PlayerRole } from '@/core'
+import { usePartyContext } from '../../hooks'
 
-export default function NewPlayer ({ partyId }: { partyId: string }) {
+export default function NewPlayer () {
+  const { partyId } = usePartyContext()
   const { name, errors, userLoggedIn, handleNameChange, handleRoleChange, handleSubmit } = usePlayerForm(partyId)
   return (
         <>

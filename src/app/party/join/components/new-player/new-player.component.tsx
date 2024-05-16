@@ -16,7 +16,7 @@ export default function NewPlayer () {
                             <Input
                                 label="Tu nombre"
                                 type="text"
-                                placeholder="John Doe"
+                                placeholder="Ingresa tu nombre"
                                 name="name"
                                 onChange={handleNameChange}
                                 errors={errors}

@@ -10,8 +10,8 @@ interface Props {
 }
 
 export default function Main ({ partyId }: Props) {
-  const { socket, setPartyName, setPlayers, setPartyId, setAverage, setTotalCount } = usePartyContext()
-  const { setUsername, setRole, setIsOwner } = useUserContext()
+  const { socket, setPartyName, setPlayers, setPartyId, setAverage, setTotalCount, setRevealed } = usePartyContext()
+  const { setUsername, setRole, setIsOwner, setVote } = useUserContext()
 
   useEffect(() => {
     setPartyId(partyId)
@@ -36,9 +36,16 @@ export default function Main ({ partyId }: Props) {
     })
 
     socket.on('reveal-cards', ({ average, votesCount }) => {
-      console.log('Entro a reveal-cards')
       setAverage(average)
       setTotalCount(votesCount)
+      setRevealed(true)
+    })
+
+    socket.on('reset-party', ({ players }) => {
+      updatePlayers(players)
+      setVote(null)
+      setAverage(0)
+      setRevealed(false)
     })
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])

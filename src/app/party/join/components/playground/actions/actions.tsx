@@ -1,31 +1,33 @@
+import { useMemo } from 'react'
 import { usePartyContext, useUserContext } from '../../../hooks'
 import { Button } from '@/design-system'
-
-const API_URL = process.env.API_URL || 'http://localhost:3001'
+import { getAverage, resetParty } from '@/services/api'
 
 export default function Actions () {
-  const { revealed, setRevealed, partyId } = usePartyContext()
+  const { revealed, partyId, players } = usePartyContext()
   const { isOwner } = useUserContext()
 
-  const handleReveal = () => {
-    console.log('Click en revelar cartas')
-    fetch(`${API_URL}/party/average`, {
-      method: 'PATCH',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ roomId: partyId })
-    }).then(res => {
-      if (res.status === 204) {
-        setRevealed(true)
+  const votesCount = useMemo(() => {
+    return players.reduce((acc, player) => {
+      if (player.vote) {
+        acc++
       }
-    })
+      return acc
+    }, 0)
+  }, [players])
+
+  const handleReveal = async () => {
+    await getAverage(partyId)
+  }
+
+  const handleReset = async () => {
+    await resetParty(partyId)
   }
 
   return (
   <>
-    {!revealed && isOwner && <Button text="Revelar cartas" variant="tertiary" onClick={handleReveal} />}
-    {revealed && isOwner && <Button text="Nueva votación" variant="tertiary" />}
+    {!revealed && isOwner && votesCount > 0 && <Button text="Revelar cartas" variant="tertiary" onClick={handleReveal} />}
+    {revealed && isOwner && <Button text="Nueva votación" variant="tertiary" onClick={handleReset}/>}
   </>
   )
 }

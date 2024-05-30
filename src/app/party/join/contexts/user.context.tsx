@@ -1,13 +1,14 @@
 import { ReactElement, createContext, useState } from 'react'
 import { UserContext as UserContextType } from '../types'
-import { PlayerRole } from '@/types'
+import { PlayerRole } from '@/core'
 
 export const UserContext = createContext<UserContextType | null>(null)
 
 export function UserProvider ({ children }: { children: ReactElement }) {
   const [username, setUsername] = useState('')
-  const [role, setRole] = useState<PlayerRole>('player')
+  const [role, setRole] = useState<PlayerRole>(PlayerRole.Player)
   const [isOwner, setIsOwner] = useState(false)
+  const [vote, setVote] = useState<string | null>(null)
 
   return (
         <UserContext.Provider value={
@@ -17,7 +18,9 @@ export function UserProvider ({ children }: { children: ReactElement }) {
               role,
               setRole,
               isOwner,
-              setIsOwner
+              setIsOwner,
+              vote,
+              setVote
             }
         }>
             {children}

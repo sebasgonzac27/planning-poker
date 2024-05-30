@@ -13,7 +13,7 @@
     }
 
     &--large {
-        min-width: 55px;
+        min-width: 50px;
         min-height: 80px;
         border-radius: 8px;
     }
@@ -27,12 +27,12 @@
 @media screen and (max-width: 768px){
     .card {
         &--small {
-            min-width: 25px;
-            min-height: 45px;
+            min-width: 30px;
+            min-height: 50px;
         }
 
         &--large {
-            min-width: 45px;
+            min-width: 40px;
             min-height: 70px;
         }
     }

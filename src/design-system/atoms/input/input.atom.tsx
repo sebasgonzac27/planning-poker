@@ -7,6 +7,13 @@ interface Props extends ComponentProps<'input'> {
     name: string;
 }
 
+/**
+ * Description: Make an input component with label and errors
+ * @date 2024-05-09
+ * @author Juan Sebastian Gonzalez Camacho
+ * @param {ComponentProps<'input'>} props
+ * @function
+ */
 export default function Input ({ label, errors, name, ...props }: Props) {
   return (
         <div className={styles['input-container']}>

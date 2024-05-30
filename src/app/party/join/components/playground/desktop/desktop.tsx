@@ -3,7 +3,7 @@ import { Player as PlayerT } from '@/core'
 import { Socket } from 'socket.io-client'
 
 import Player from '../../player/player.component'
-import Desk from '../../desk/desk.component'
+import Desk from '../desk/desk.component'
 
 interface Props {
   players: PlayerT[]

@@ -17,7 +17,7 @@ export default function CreatePartyPage () {
             </header>
             <section className={styles['create-container__content']}>
                 <form action="" className={styles['create-container__form']} onSubmit={handleSubmit}>
-                    <Input label="Nombra la partida" name="name" type="text" placeholder="Sprint 32" value={partyName} required onChange={handleChange} errors={errors} />
+                    <Input label="Nombra la partida" name="name" type="text" placeholder="Ingresa un nombre" value={partyName} required onChange={handleChange} errors={errors} />
                     <Button text="Crear partida" variant="primary" isDisabled={errors.length > 0 || partyName === ''} />
                 </form>
             </section>

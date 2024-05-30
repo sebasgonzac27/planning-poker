@@ -23,6 +23,13 @@
         border: 1px solid $btn-bg-primary;
     }
 
+    &--tertiary {
+        padding: 12px 24px;
+        font-size: 16px;
+        background-color: $btn-bg-tertiary;
+        color: $btn-bg-primary;
+    }
+
     &:disabled {
         cursor: not-allowed;
         pointer-events: none;

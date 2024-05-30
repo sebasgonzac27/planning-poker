@@ -1,7 +1,8 @@
 import { validateInput } from '@/utils'
 import React, { useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { createParty } from '@/services/api'
+import { createParty } from '@/services'
+import { toast } from 'sonner'
 
 export function useCreateForm () {
   const [partyName, setPartyName] = useState<string>('')
@@ -16,9 +17,10 @@ export function useCreateForm () {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     if (errors.length > 0) {
+      toast.error('Ingrese un nombre válido.')
       return
     }
-    const id = await createParty(partyName)
+    const { id } = await createParty(partyName)
     router.push(`/party/join?partyId=${id}`)
   }
 

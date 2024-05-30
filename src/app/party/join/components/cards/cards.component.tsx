@@ -2,7 +2,7 @@ import styles from './cards.module.scss'
 import { Card } from '@/design-system'
 import { usePartyContext, useUserContext } from '../../hooks'
 import { PlayerRole } from '@/core'
-import { vote as Vote } from '@/services/api'
+import { vote as Vote } from '@/services'
 
 const POINTS = ['1', '2', '3', '5', '8', '13', '21', '34', '55', '89', '?', '☕️']
 

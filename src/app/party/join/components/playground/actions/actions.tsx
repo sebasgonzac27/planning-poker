@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
 import { usePartyContext, useUserContext } from '../../../hooks'
 import { Button } from '@/design-system'
-import { getAverage, resetParty } from '@/services/api'
+import { getAverage, resetParty } from '@/services'
 
 export default function Actions () {
   const { revealed, partyId, players } = usePartyContext()

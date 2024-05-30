@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { PlayerRole } from '@/core'
 import { usePartyContext, useUserContext } from '.'
 import { validateInput } from '@/utils'
+import { toast } from 'sonner'
 
 export default function usePlayerForm (partyId: string) {
   const { socket, setUserLoggedIn, userLoggedIn } = usePartyContext()
@@ -22,6 +23,10 @@ export default function usePlayerForm (partyId: string) {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+    if (errors.length > 0) {
+      toast.error('Ingrese un nombre válido.')
+      return
+    }
     socket.emit('join-party', { partyId, name, role })
     setUsername(name)
     setRoleContext(role as PlayerRole)

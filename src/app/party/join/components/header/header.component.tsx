@@ -4,8 +4,12 @@ import Image from 'next/image'
 import { usePartyContext, useUserContext } from '../../hooks'
 
 export default function Header () {
-  const { partyName } = usePartyContext()
+  const { partyName, setInviteModal } = usePartyContext()
   const { username } = useUserContext()
+
+  const handleClick = () => {
+    setInviteModal(true)
+  }
 
   return (
         <header className={styles.header}>
@@ -15,7 +19,7 @@ export default function Header () {
             <div className={styles.header__badge}>
                 <Avatar variant="small" initials={username.slice(0, 2) || ''} />
                 <div className={styles.header__button}>
-                    <Button text="Invitar jugadores" variant="secondary" />
+                    <Button text="Invitar jugadores" variant="secondary" onClick={handleClick}/>
                 </div>
             </div>
         </header>

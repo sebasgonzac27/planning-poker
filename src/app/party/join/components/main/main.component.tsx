@@ -1,10 +1,9 @@
 'use client'
 import styles from './main.module.scss'
-import { Header, NewPlayer, Playground, Cards, Stats } from '..'
+import { Header, NewPlayer, Playground, Cards, Stats, Invite } from '..'
 import { useEffect } from 'react'
 import { usePartyContext, useUserContext } from '../../hooks'
 import { Player } from '@/core'
-
 interface Props {
     partyId: string;
 }
@@ -57,6 +56,7 @@ export default function Main ({ partyId }: Props) {
             <Playground />
             <Cards />
             <Stats/>
+            <Invite/>
         </main>
   )
 }

@@ -1,5 +1,5 @@
 import { ReactElement, createContext, useState } from 'react'
-import { UserContext as UserContextType } from '../types'
+import { UserContext as UserContextType } from '../interfaces'
 import { PlayerRole } from '@/core'
 
 export const UserContext = createContext<UserContextType | null>(null)

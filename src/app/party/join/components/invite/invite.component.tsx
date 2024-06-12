@@ -2,6 +2,7 @@ import { usePartyContext } from '../../hooks'
 import styles from './invite.module.scss'
 import { Button, Modal } from '@/design-system'
 import { toast } from 'sonner'
+import { IoCloseOutline } from 'react-icons/io5'
 
 export default function Invite () {
   const { inviteModal, setInviteModal } = usePartyContext()
@@ -27,7 +28,7 @@ export default function Invite () {
         <Modal contentClassName={styles.invite}>
           <Modal.Header className={styles.invite__header}>
             <h2 className={styles.invite__title}>Invitar jugadores</h2>
-            <button className={styles.invite__close} onClick={handleCloseModal}>X</button>
+            <button className={styles.invite__close} onClick={handleCloseModal}><IoCloseOutline/></button>
           </Modal.Header>
           <Modal.Body className={styles.invite__body}>
             <p className={styles.invite__url}>{url}</p>

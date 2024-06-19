@@ -1,10 +1,6 @@
 @use '@/styles/variables' as *;
 
 .invite {
-  width: 40vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 
   &__header {
     display: flex;
@@ -22,6 +18,7 @@
 
   &__title {
     font-size: 1.3rem;
+    color: $color;
   }
 
   &__close {
@@ -38,9 +35,9 @@
     align-items: center;
     justify-content: center;
     gap: 20px;
-    width: 100%;
+    width: clamp(15rem, 80vw, 35rem);
     height: 100%;
-    margin: 50px;
+    padding: 50px;
   }
 
   &__url {
@@ -48,5 +45,13 @@
     background-color: $bg-soft;
     border: 1px solid $input-border;
     border-radius: 99px;
+    color: $input-color;
+    width: 100%;
+    text-wrap: nowrap;
+    overflow-x: auto;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 }

@@ -25,14 +25,14 @@ export default function Invite () {
   return (
     <>
       {inviteModal &&
-        <Modal contentClassName={styles.invite}>
+        <Modal>
           <Modal.Header className={styles.invite__header}>
-            <h2 className={styles.invite__title}>Invitar jugadores</h2>
-            <button className={styles.invite__close} onClick={handleCloseModal}><IoCloseOutline/></button>
+              <h2 className={styles.invite__title}>Invitar jugadores</h2>
+              <button className={styles.invite__close} onClick={handleCloseModal}><IoCloseOutline /></button>
           </Modal.Header>
           <Modal.Body className={styles.invite__body}>
-            <p className={styles.invite__url}>{url}</p>
-            <Button text='Copiar link' variant='primary' onClick={handleCopyLink} />
+              <p className={styles.invite__url}>{url}</p>
+              <Button text='Copiar en el portapapeles' variant='primary' onClick={handleCopyLink} />
           </Modal.Body>
         </Modal>
       }

@@ -9,6 +9,7 @@
     &__label {
         font-size: 0.9rem;
         font-weight: $font-bold;
+        color: $input-color;
     }
 
     &__input {
@@ -33,5 +34,6 @@
     &__error {
         font-size: 0.6rem;
         font-weight: $font-regular;
+        color: $input-color;
     }
 }

@@ -10,8 +10,8 @@ export default function NewPlayer () {
   return (
         <>
             {!userLoggedIn && (
-                <Modal contentClassName={styles.modal}>
-                    <Modal.Body>
+                <Modal>
+                    <Modal.Body className={styles.modal__body}>
                         <form className={styles.modal__form} onSubmit={handleSubmit}>
                             <Input
                                 label="Tu nombre"

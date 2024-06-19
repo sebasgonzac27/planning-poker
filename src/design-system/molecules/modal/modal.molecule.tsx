@@ -1,31 +1,38 @@
+import { createPortal } from 'react-dom'
 import styles from './modal.module.scss'
-import { Children, ComponentProps, ReactElement, ReactNode, cloneElement } from 'react'
+import { Children, ComponentProps, ReactElement, ReactNode, cloneElement, useEffect, useState } from 'react'
 
-interface Props extends ComponentProps<'div'> {
-    contentClassName: string
-}
+export default function Modal ({ children } : { children: ReactNode }) {
+  const [mounted, setMounted] = useState(false)
 
-export default function Modal ({ children, contentClassName }: Props) {
-  return (
+  useEffect(() => {
+    setMounted(true)
+    return () => setMounted(false)
+  }, [mounted])
+
+  return mounted
+    ? createPortal(
         <div className={styles.modal}>
-            <div className={`${styles.modal__content} ${contentClassName}`}>
+            <dialog className={styles.modal__content}>
                 {Children.map(children, (child) => cloneElement(child as ReactElement<ReactNode>))}
-            </div>
-        </div>
-  )
+            </dialog>
+        </div>,
+        document.getElementById('modal') as HTMLElement
+    )
+    : null
 }
 
-function Header ({ children, ...props }: ComponentProps<'div'>) {
+function Header ({ children, className }: ComponentProps<'div'>) {
   return (
-        <header className={styles.modal__header} {...props}>
+        <header className={className}>
             {children}
         </header>
   )
 }
 
-function Body ({ children, ...props }: ComponentProps<'div'>) {
+function Body ({ children, className }: ComponentProps<'div'>) {
   return (
-        <div className={styles.modal__body} {...props}>
+        <div className={className}>
             {children}
         </div>
   )

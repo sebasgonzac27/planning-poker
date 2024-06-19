@@ -2,18 +2,18 @@
 
 .table {
     display: grid;
-    place-content: center;
-    width: 553px;
-    height: 295px;
+    place-items: center;
+    width: 35rem;
+    height: 20rem;
     border: 1px solid $border-first;
     border-radius: 226px;
     box-shadow: 0 0 2px 0 $color;
 
     &__middle {
         display: grid;
-        place-content: center;
-        width: 505px;
-        height: 248px;
+        place-items: center;
+        width: 93%;
+        height: 90%;
         border: 1px solid $border-first;
         border-radius: 226px;
         box-shadow: 0 0 2px 0 $color;
@@ -21,29 +21,12 @@
 
     &__inner {
         display: grid;
-        place-content: center;
-        width: 471px;
-        height: 222px;
+        place-items: center;
+        width: 93%;
+        height: 90%;
         background-color: $bg-soft;
         border: 1px solid $border-first;
         border-radius: 226px;
         box-shadow: 0 0 2px 0 $color;
-    }
-}
-
-@media screen and (width < 768px) {
-    .table {
-        width: 200px;
-        height: 350px;
-
-        &__middle {
-            width: 170px;
-            height: 320px;
-        }
-
-        &__inner {
-            width: 140px;
-            height: 290px;
-        }
     }
 }

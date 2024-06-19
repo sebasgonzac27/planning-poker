@@ -27,6 +27,7 @@ export default function RootLayout ({
           className={poppins.className}
         />
         {children}
+        <div id="modal"></div>
         </body>
     </html>
   )

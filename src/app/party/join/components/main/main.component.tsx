@@ -1,6 +1,6 @@
 'use client'
 import styles from './main.module.scss'
-import { Header, NewPlayer, Playground, Cards, Stats, Invite } from '..'
+import { Header, NewPlayer, Playground, Cards, Stats, Invite, Menu } from '..'
 import { useEffect } from 'react'
 import { usePartyContext, useUserContext } from '../../hooks'
 import { Player } from '@/core'
@@ -9,7 +9,7 @@ interface Props {
 }
 
 export default function Main ({ partyId }: Props) {
-  const { socket, setPartyName, setPlayers, setPartyId, setAverage, setTotalCount, setRevealed } = usePartyContext()
+  const { socket, setPartyName, setPlayers, setPartyId, setAverage, setTotalCount, setRevealed, setDistribution } = usePartyContext()
   const { setUsername, setRole, setIsOwner, setVote } = useUserContext()
 
   useEffect(() => {
@@ -27,6 +27,7 @@ export default function Main ({ partyId }: Props) {
 
     socket.on('join-party', ({ party, players }) => {
       setPartyName(party.name)
+      setDistribution(party.distribution)
       updatePlayers(players)
     })
 
@@ -51,12 +52,15 @@ export default function Main ({ partyId }: Props) {
 
   return (
         <main className={styles.join}>
-            <NewPlayer />
             <Header />
             <Playground />
             <Cards />
             <Stats/>
+
+            {/* Modals */}
+            <NewPlayer />
             <Invite/>
+            <Menu/>
         </main>
   )
 }

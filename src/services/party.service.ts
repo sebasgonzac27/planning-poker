@@ -29,3 +29,12 @@ export async function resetParty (roomId: string) {
     handleError('Ocurrió un error reiniciando la partida')
   }
 }
+
+export async function getDistributions () {
+  try {
+    const { data } = await api.get('/party/distributions')
+    return data
+  } catch (error) {
+    handleError('Ocurrió un error obteniendo las distribuciones')
+  }
+}

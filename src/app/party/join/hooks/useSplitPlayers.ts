@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { usePartyContext } from '.'
 import { Player } from '@/core'
 
-export function useSplitPlayers () {
+export default function useSplitPlayers () {
   const { socket, players, setPlayers } = usePartyContext()
   const [topPlayers, setTopPlayers] = useState<Player[]>([])
   const [middlePlayers, setMiddlePlayers] = useState<Player[]>([])

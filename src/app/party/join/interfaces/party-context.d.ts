@@ -1,5 +1,6 @@
 import { Player, SetState } from '@/core'
 import { Socket } from 'socket.io-client'
+import { Distribution } from './distribution'
 
 export interface PartyContext {
     socket: Socket,
@@ -18,5 +19,9 @@ export interface PartyContext {
     totalCount: Record<string, number>,
     setTotalCount: SetState<Record<string, number>>,
     inviteModal: boolean,
-    setInviteModal: SetState<boolean>
+    setInviteModal: SetState<boolean>,
+    menuModal: boolean,
+    setMenuModal: SetState<boolean>,
+    distribution: Distribution | null,
+    setDistribution: SetState<Distribution | null>
 }

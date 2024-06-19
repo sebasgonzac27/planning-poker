@@ -4,11 +4,9 @@ import { usePartyContext, useUserContext } from '../../hooks'
 import { PlayerRole } from '@/core'
 import { vote as Vote } from '@/services'
 
-const POINTS = ['1', '2', '3', '5', '8', '13', '21', '34', '55', '89', '?', '☕️']
-
 export default function Cards () {
   const { role, vote, setVote } = useUserContext()
-  const { userLoggedIn, revealed, socket, partyId } = usePartyContext()
+  const { revealed, socket, partyId, distribution } = usePartyContext()
 
   const handleCardClick = async (point: string) => {
     let votePoint: string | null
@@ -24,11 +22,11 @@ export default function Cards () {
 
   return (
     <>
-      {userLoggedIn && !revealed && role === PlayerRole.Player && (
+      {!revealed && role === PlayerRole.Player && (
         <div className={styles.cards}>
           <h3 className={styles.cards__title}>Elige una carta 👇</h3>
           <div className={styles.cards__container}>
-            {POINTS.map((point, index) => (
+            {distribution?.values.map((point, index) => (
               <Card className={styles.cards__card} variant='large' fill={point === vote} key={index} onClick={() => handleCardClick(point)}>{point}</Card>
             ))}
           </div>

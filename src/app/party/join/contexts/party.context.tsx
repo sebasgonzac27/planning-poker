@@ -1,6 +1,6 @@
 import { ReactElement, createContext, useState } from 'react'
 import { io } from 'socket.io-client'
-import { PartyContext as PartyContextType } from '../interfaces'
+import { Distribution, PartyContext as PartyContextType } from '../interfaces'
 import { Player } from '@/core'
 
 const socket = io(process.env.NEXT_PUBLIC_SERVER_URL || '', { reconnection: false })
@@ -16,6 +16,8 @@ export function PartyProvider ({ children }: { children: ReactElement }) {
   const [average, setAverage] = useState(0)
   const [totalCount, setTotalCount] = useState({})
   const [inviteModal, setInviteModal] = useState(false)
+  const [menuModal, setMenuModal] = useState(false)
+  const [distribution, setDistribution] = useState<Distribution | null>(null)
 
   return (
         <PartyContext.Provider value={
@@ -36,7 +38,11 @@ export function PartyProvider ({ children }: { children: ReactElement }) {
               totalCount,
               setTotalCount,
               inviteModal,
-              setInviteModal
+              setInviteModal,
+              menuModal,
+              setMenuModal,
+              distribution,
+              setDistribution
             }
         }>
             {children}

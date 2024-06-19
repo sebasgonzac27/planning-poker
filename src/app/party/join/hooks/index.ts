@@ -1,5 +1,5 @@
-export * from './usePartyContext'
-export * from './useUserContext'
-export * from './useSplitPlayers'
+export { default as usePartyContext } from './usePartyContext'
+export { default as useUserContext } from './useUserContext'
+export { default as useSplitPlayers } from './useSplitPlayers'
 export { default as usePlayerForm } from './usePlayerForm'
 export { default as useWindowDimensions } from './useWindowDimensions'

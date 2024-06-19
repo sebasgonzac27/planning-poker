@@ -19,7 +19,7 @@ export default function Playground () {
 
   return (isClient &&
     <div className={styles.playground}>
-      { width > 768 ? <Desktop players={players} socket={socket} /> : <Mobile players={players} socket={socket}/> }
+      { width > 868 ? <Desktop players={players} socket={socket} /> : <Mobile players={players} socket={socket}/> }
     </div>
   )
 }

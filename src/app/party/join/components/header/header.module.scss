@@ -19,28 +19,11 @@
     &__badge {
         display: flex;
         align-items: center;
-        gap: 24px;
+        gap: 1.2rem;
     }
 
     &__avatar {
-        position: relative;
-    }
-
-    &__dropdown {
-        position: absolute;
-        margin-top: 10px;
-        top: 100%;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 1;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 15vw;
-        background-color: $bg-soft;
-        padding: 20px;
-        border-radius: 10px;
-        border: 1px solid $input-border;
+        cursor: pointer;
     }
 }
 

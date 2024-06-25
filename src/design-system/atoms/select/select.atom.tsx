@@ -9,13 +9,13 @@ interface Props extends ComponentProps<'select'> {
   options: Option[]
 }
 
-export default function Select ({ label, name, id, options }: Props) {
+export default function Select ({ label, name, id, options, ...props }: Props) {
   return (
     <div className={styles.select}>
       <label className={styles.select__label} htmlFor={id}>
         {label}
       </label>
-      <select className={styles.select__field} name={name} id={id}>
+      <select className={styles.select__field} name={name} id={id} {...props}>
         {
           options.map((option, index) =>
             <option key={index} value={option.value}>{option.label}</option>

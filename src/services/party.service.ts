@@ -38,3 +38,27 @@ export async function getDistributions () {
     handleError('Ocurrió un error obteniendo las distribuciones')
   }
 }
+
+export async function toggleDistribution (roomId: string, distribution: string) {
+  try {
+    const { data } = await api.put('/party/toggle-distribution', {
+      roomId,
+      distribution
+    })
+    return data
+  } catch (error) {
+    handleError('Ocurrió un error cambiando la distribución')
+  }
+}
+
+export async function toggleAdmin (roomId: string, userId: string) {
+  try {
+    const { data } = await api.put('/party/toggle-admin', {
+      roomId,
+      userId
+    })
+    return data
+  } catch (error) {
+    handleError('Ocurrió un error cambiando el admin')
+  }
+}

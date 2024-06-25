@@ -47,6 +47,10 @@ export default function Main ({ partyId }: Props) {
       setAverage(0)
       setRevealed(false)
     })
+
+    socket.on('update-distribution', ({ distribution }) => {
+      setDistribution(distribution)
+    })
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
